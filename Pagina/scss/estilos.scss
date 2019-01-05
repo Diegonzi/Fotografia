@@ -20,14 +20,10 @@
     
 }
 
-footer{
-    margin-top: -22.8rem;
-}
-
-
 // Carousel
 #carousel {
   margin-top: 25rem;
+  margin-bottom: -22.8rem;
   position: relative;
   height: 700px;
   top: 50%;
@@ -104,4 +100,117 @@ footer{
   left: 50%;
   transform: translateX(-50%);
   bottom: 10px;
+}
+
+//Quien soy
+.quien-soy-imagen{
+    border-radius: .5rem;
+-webkit-box-shadow: 0px 0px 30px 1px rgba(0,0,0,0.54);
+-moz-box-shadow: 0px 0px 30px 1px rgba(0,0,0,0.54);
+box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.54);
+}
+.texto{
+    font-size: 1.5rem;
+    font-family: 'Arvo', serif;
+}
+
+
+// Servicio
+@mixin servicio($img){
+    border: solid;
+    border-width: 1.4px;
+    height: 18.9rem;;
+    width: 15rem;
+    background-image: url($img);
+    background-size: cover;
+    color:white;
+    border-radius: .2rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.servicio1{
+   
+    @include servicio("../imagenes/jeremy-wong-weddings-602196-unsplash.jpg")
+}
+.servicio2{
+    @include servicio("../imagenes/jeremy-wong-weddings-602196-unsplash.jpg")
+}
+.servicio3{
+    @include servicio("../imagenes/jeremy-wong-weddings-602196-unsplash.jpg")
+}
+.servicio4{
+    @include servicio("../imagenes/jeremy-wong-weddings-602196-unsplash.jpg")
+}
+
+@mixin serviciohover{
+    .fondo-hover{
+    background: rgba(0, 0, 0, 0.027);
+    background-size: cover;
+   
+}
+    .titulo-servicio{
+        font-size: 2rem;
+        margin-top: 5rem;
+        margin-left: 10rem;
+    }
+    #hr-servicio{
+        display: block;
+        border-color: rgb(195, 195, 195);
+    }
+    .texto-servicio{
+        display: block;
+        font-size: 1rem;
+        font-family: 'Arvo', serif;
+    }
+}   
+.fondo-hover{
+    background: rgba(0, 0, 0, 0);
+}
+    .servicio1:hover{
+        @include serviciohover()
+    }
+    .servicio2:hover{
+        @include serviciohover()
+    }
+    .servicio3:hover{
+        @include serviciohover()
+    }
+    .servicio4:hover{
+        @include serviciohover()
+    }
+
+
+.texto-servicio{
+    display:none;
+}
+
+   .titulo-servicio{
+        font-size: 3rem;
+        margin-top: 8rem;
+        margin-left: 7rem;
+}
+#hr-servicio{
+    display:none;
+}
+
+// Contacto
+
+
+@mixin contacto(){
+    border: solid;
+    border-width: 1.5px;
+    height: 18.9rem;;
+    width: 15rem;
+    border-radius: .2rem;
+    margin-bottom: 1.5rem;
+}
+.contacto{
+    cursor: pointer;
+    @include contacto();
+}
+
+#contacto{
+    margin-top: 5rem;
+    margin-bottom: 12rem;;
 }
